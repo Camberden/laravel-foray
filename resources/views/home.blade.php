@@ -8,7 +8,6 @@
 <body>
 	<h1>I am tired but also not! :D</h1>
 
-
 	@auth
 	<div>
 		<p>Congrats! You are logged in!</p>

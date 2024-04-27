@@ -19,6 +19,5 @@ class PostController extends Controller
         $incomingFields["user_id"] = auth()->id();
         Post::create($incomingFields);
         return redirect("/");
-
     }
 }

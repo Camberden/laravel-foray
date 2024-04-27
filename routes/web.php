@@ -10,17 +10,20 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 
+// Route::get("/", function() {
+//     return view("home");
+// });
+
 Route::get('/', function () {
-
+    $posts = [];
     if (auth()->check()) {
-        $posts = auth()->user()->usersNiftyPosts()->latest()->get();
-    }
-
-    // $posts = auth()->user()->usersNiftyPosts()->latest()->get();
-    // $posts = Post::all();
-    // $posts = Post::where("user_id", auth()->id())->get();
-    return view('home', ["posts" => $posts]); //changes to my "home" as index
+    $posts = auth()->user()->usersNiftyPosts()->latest()->get();
+    return view('home', ["posts" => $posts]);
+} else {
+    return view("home");
+}
 });
+
 // >>>>>>>>> URI >>>>>>>>> The Class where it is >> the function
 Route::post('/register', [UserController::class, 'register']);
 Route::post("/logout", [UserController::class, "logout"]);
