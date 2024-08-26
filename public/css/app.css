@@ -1,0 +1,223 @@
+/* ----- HEADING ASSETS ----- */
+
+:root {
+	--clr-secondary-400: 217 19% 35%;
+}
+
+.home-image {
+	width: 25%;
+	min-width: 300px;
+	height: 25%;
+	min-height: 300px;
+	margin-bottom: -180px;
+	margin-top: -45px;
+	margin-left: 30px;
+	user-select: none;
+	transform: rotate(-30deg);
+}
+
+#signature {
+	border: #a1dbf8 solid;
+	animation-name: stagger-signature;
+  	animation-duration: 5s;
+  	animation-iteration-count: infinite;
+}
+@keyframes stagger-signature {
+	0% {
+		height: 25%;
+	}
+	25% {
+		height: 30%;
+	}
+	50% {
+		height: 25%;
+	}
+	75% {
+		height: 30%;
+	}
+	100% {
+		height: 25%;
+	}
+}
+
+.heading-image {
+	z-index: -1;
+	padding-bottom: 5rem;
+	background-image: url("assets/image-visas.png");
+	background-size: contain;
+	height: 100%;
+	opacity: 75%;
+	box-shadow: 3rem 3rem 2rem -3rem hsl(var(--clr-secondary-400) / 0.25);
+
+}
+
+#camberden {
+	z-index: 1;
+	font-family: Permanent Marker, sans-serif;
+	font-style: normal;
+	font-size: 300%;
+	text-align: center;
+	font-weight: 500;
+	background: linear-gradient(#f59b60 20%, #a1dbf8 100%);
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	color: transparent;
+	user-select: none;
+	text-shadow: -5px -2px 0px rgb(112, 12, 170);
+	animation-name: change-text-shadow;
+  	animation-duration: 5s;
+  	animation-iteration-count: infinite;
+
+}
+@keyframes change-text-shadow {
+	25% {
+		text-shadow: -5px -2px 0px rgb(112, 12, 170);
+	}
+	50% {
+		text-shadow: -5px -2px 0px rgb(133, 12, 203);
+	}
+	75% {
+		text-shadow: -5px -2px 0px rgb(104, 5, 161);
+	}
+}
+
+.site-info {
+	margin-top: -2%;
+	background-color: #f6f3ed;
+	box-shadow: 3rem 3rem 2rem -3rem hsl(var(--clr-secondary-400) / 0.25);
+
+	border-top-width: 0.5rem;
+	border-top-color: #f6f3ed;
+	border-top-style: groove;
+
+	border-left-width: 0.5rem;
+	border-left-color: #f6f3ed;
+	border-left-style: groove;
+
+}
+
+/* ----- BODY ASSETS ----- */
+
+body {
+	color: black;
+	font-family: Lora, Georgia, 'Times New Roman', Times, serif;
+	text-align: center;
+	/* z-index: 1; */
+	background-image: url('/image-curtain.svg'); /* #EEEFF0 in SVG Fill */
+	background-color: #F4F5F6;
+}
+
+.index-grid {
+	display: grid;
+	gap: 0.5rem;
+	grid-template-columns: repeat(1, 100%); /* repeat(4, 25%) */
+	width: min(60%, 70rem);
+	margin-inline: auto;
+}
+
+.index-item {
+	box-shadow: 3rem 3rem 2rem -3rem hsl(var(--clr-secondary-400) / 0.25);
+	background-color: #f6f3ed;
+	border-width: 1rem;
+	border-style: outset;
+	border-color: #cb2a0e;
+
+}
+
+.sub-index-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 33%); /* repeat(4, 25%) */
+	margin-inline: auto;
+}
+
+.sub-index-item {
+	border-left-width: 1rem;
+	border-right-width: 0rem;
+	border-top-width: 0rem;
+	border-bottom-width: 0rem;
+	border-style: double;
+	border-color: #af7bc5;
+	height: 3rem;
+	margin-bottom: -1rem;
+}
+
+.section-title {
+	font-size: 1rem;
+	cursor: pointer;
+
+	background-color: rgba(0, 0, 0, 0.1);
+
+	border-bottom-width: 0.5rem;
+	border-bottom-color: #f6f3ed;
+	border-bottom-style: groove;
+
+	border-right-width: 0.5rem;
+	border-right-color: #f6f3ed;
+	border-right-style: groove;
+
+	background-image: linear-gradient(120deg, 0%,  100%);
+	background-repeat: no-repeat;
+	background-size: 25% 0.1em;
+	background-position: 0 88%;
+}
+
+.section-title:hover {
+	color: rgb(112, 12, 170);
+	background-size: 100% 5%;
+	background-image: linear-gradient(120deg, #f59b60 0%, #a1dbf8 100%);
+	transition: background-size 0.3s ease-in;
+}
+
+
+button {
+	user-select: none;
+}
+
+.marker {
+	color: #db8044;
+	font-family: Permanent Marker, serif;
+}
+
+#return {
+	font-size: 1em;
+	text-align: left;
+}
+
+#return a:hover {
+	color: red;
+}
+
+p {
+	color: inherit;
+}
+
+a {
+	color: #f59b60;
+	font-style: normal;
+	text-decoration: solid;
+	outline: 0;
+	cursor: pointer;
+
+	background-image: linear-gradient(120deg, 0%,  100%);
+	background-repeat: no-repeat;
+	background-size: 25% 0.1em;
+	background-position: 0 88%;
+	transition: background-size 0.1s ease-in;
+}
+
+a:hover {
+	background-size: 100% 5%;
+	background-image: linear-gradient(120deg, #f59b60 0%, #a1dbf8 100%);
+}
+
+/* FOR SOMETHING TO HIGHLIGHT IN VIEWPORT: PENDING USE CASE */
+.text-flourish {
+	background-size: 100% 5%;
+	background-image: linear-gradient(120deg, #f59b60 0%, #a1dbf8 100%);
+}
+
+@keyframes small-signature-movement {
+	from {background-position: 0 0;}
+	to {background-position: 100% 0;}
+}
+
