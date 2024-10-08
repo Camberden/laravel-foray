@@ -8,7 +8,6 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
-
     public function login(Request $request) {
         $incomingFields = $request->validate([
             "login-name" => "required",

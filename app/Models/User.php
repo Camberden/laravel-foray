@@ -49,4 +49,8 @@ class User extends Authenticatable
         return $this->hasMany(Post::class, "user_id"); 
         // using this key to reference user from post
     }
+
+    public function displayUsername(){
+        return $this->name;
+    }
 }

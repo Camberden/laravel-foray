@@ -11,14 +11,15 @@
 
 <body>
 
+
 	
 	<h1><span id="camberden">Camberden's</span><span class="marker">Laravel Workspace<span></h1>
 
-	<main class="index-grid">
+	<main class="index-grid"><h3></h3>
 
 	@auth
 	<div class="index-item">
-		<p>Congrats! You are logged in!</p>
+		<p>Welcome, <span id="current-user">{{auth()->user()->name}}</span>!</p>
 		<form action="/logout" method="POST">
 			@csrf
 			<button>Log out!</button>
@@ -35,13 +36,20 @@
 			</form>
 		</div>
 	</div>
-
+	
 	<div class="index-item">
-	<h2>All posts to date below!</h2>
+	<h2>Below are your posts.</h2>
 	@foreach($posts as $post)
 	<div>
 		<h3>{{$post["title"]}}</h3>
 		<p>{{$post["body"]}}</p>
+
+		<p><a href="/edit-post/{{$post->id}}">Edit</a></p>
+		<form action="/delete-post/{{$post->id}}" method="POST">
+			@csrf
+			@method("DELETE")
+			<button>Delete</button>
+		</form>
 	</div>
 	@endforeach
 	</div>
