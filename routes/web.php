@@ -16,7 +16,8 @@ Route::get('/', function () {
     $posts = [];
     if (auth()->check()) {
         $posts = auth()->user()->usersNiftyPosts()->latest()->get();
-        return view("home", ["posts" => $posts, "currentUser" => Post::user()->name]);
+        return view("home", ["posts" => $posts]);
+        // "currentUser" => Post::user()->name
     } else {
         return view("home");
     }
